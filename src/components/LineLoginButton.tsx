@@ -12,7 +12,7 @@ export function LineLoginButton() {
     // 构建 LINE Login URL
     const params = new URLSearchParams({
       response_type: "code",
-      client_id: import.meta.env.VITE_LIFF_ID, // 使用已有的 LIFF ID
+      client_id: import.meta.env.VITE_CHANNEL_ID, // 使用已有的 LIFF ID
       redirect_uri: window.location.origin, // 重定向到当前域名
       state: state,
       scope: "profile openid",
