@@ -1,0 +1,40 @@
+# Line Mini Dapp 开发笔记
+
+## 1. 项目配置
+- 基于 React + TypeScript + Vite
+- 需要安装 LIFF SDK
+- 环境变量配置 LIFF ID
+
+## 2. 初始化流程
+- LIFF SDK 初始化
+- 登录状态检查
+- 自动登录处理
+
+## 3. 核心代码示例
+
+// LIFF 初始化
+liff.init({
+  liffId: import.meta.env.VITE_LIFF_ID
+})
+.then(() => {
+  if (!liff.isLoggedIn()) {
+    liff.login();
+  }
+})
+.catch((e: Error) => {
+  console.error(e);
+});
+
+## 4. 开发注意事项
+- 必须使用 HTTPS
+- 需要在 LINE 开发者控制台配置域名
+- 处理好错误情况
+
+## 5. 部署步骤
+1. 构建项目
+2. 部署到支持 HTTPS 的服务器
+3. 配置域名白名单
+
+## 6. 参考资源
+- LIFF 文档：https://developers.line.biz/ja/docs/liff/
+- LINE 开发者文档：https://developers.line.biz/ 
