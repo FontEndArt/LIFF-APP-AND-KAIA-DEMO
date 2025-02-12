@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import liff from "@line/liff";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import "./App.css";
 
 function App() {
@@ -14,9 +15,9 @@ function App() {
       .then(() => {
         setMessage("LIFF init succeeded.");
         // TODO: 将所有构建文件上传到网络服务器，例如 Netlify
-        if (!liff.isLoggedIn()) {
-          liff.login();
-        }
+        // if (!liff.isLoggedIn()) {
+        //   liff.login();
+        // }
       })
       .catch((e: Error) => {
         setMessage("LIFF init failed.");
@@ -33,6 +34,9 @@ function App() {
           <code>{error}</code>
         </p>
       )}
+      <div className="flex flex-col gap-8 items-center justify-center py-12 px-4">
+        <ConnectButton />
+      </div>
       <a
         href="https://developers.line.biz/ja/docs/liff/"
         target="_blank"
