@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import liff from "@line/liff";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { ContractDemo } from "./components/ContractDemo";
 import "./App.css";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
       )}
       <div className="flex flex-col gap-8 items-center justify-center py-12 px-4">
         <ConnectButton />
+        <ContractDemo />
       </div>
       <a
         href="https://developers.line.biz/ja/docs/liff/"
